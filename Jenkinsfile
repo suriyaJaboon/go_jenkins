@@ -48,7 +48,7 @@ pipeline {
                 '''
             }
         }
-	stage('Build Production')	
+	stage('Build Production'){	
             steps {
                 sh '''
 		    export GOPATH=$WORKSPACE
