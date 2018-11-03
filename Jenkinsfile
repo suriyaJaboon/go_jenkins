@@ -28,7 +28,7 @@ pipeline {
                     echo $GOPATH
                     echo "install package"
                     go get -u github.com/golang/dep/cmd/dep
-                    cd Go_SLG
+                    #cd Go_SLG
                     #dep ensure'''
             }
         }
