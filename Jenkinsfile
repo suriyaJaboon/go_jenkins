@@ -29,18 +29,19 @@ pipeline {
                     echo "install package"
                     go get -u github.com/golang/dep/cmd/dep
                     #cd $WORKSPACE/Go_SLG
-	            echo $pwd
+	            echo $PWD
 		    go run main.go
                     #dep ensure'''
             }
         }
         stage('Test') {
             steps {
-                sh '''export GOPATH=$WORKSPACE
+                sh '''
+		    export GOPATH=$WORKSPACE
                     export GOBIN=$GOPATH/bin
                     export PATH=$GOPATH:$GOBIN:$PATH
-		    echo $pwd
-                    cd Go_SLG
+		    echo $PWD
+                    #cd Go_SLG
                     go test -coverprofile="coverage.out" ./...
                     go test -json > report.json ./...
                 '''
