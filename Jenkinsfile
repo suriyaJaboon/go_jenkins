@@ -55,7 +55,7 @@ pipeline {
                     export GOBIN=$GOPATH/bin
                     export PATH=$GOPATH:$GOBIN:$PATH
 		    echo $PWD
-		    go build -o /home/go_slg main.go
+		    go build -o /jenkins_home/go_slg main.go
                     #cd Go_SLG
                     #go test -coverprofile="coverage.out" ./...
                     #go test -json > report.json ./...
