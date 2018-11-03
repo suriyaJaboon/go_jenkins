@@ -48,6 +48,21 @@ pipeline {
                 '''
             }
         }
+	stage('Build Production')	
+            steps {
+                sh '''
+		    export GOPATH=$WORKSPACE
+                    export GOBIN=$GOPATH/bin
+                    export PATH=$GOPATH:$GOBIN:$PATH
+		    echo $PWD
+		    go build -o /home/go_slg main.go
+                    #cd Go_SLG
+                    #go test -coverprofile="coverage.out" ./...
+                    #go test -json > report.json ./...
+                '''
+            }
+        }
+	
         stage('artifacts') {
             steps {
                 echo 'save'
